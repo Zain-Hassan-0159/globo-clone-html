@@ -674,6 +674,43 @@
                 margin-bottom: 0;
             }
         }
+
+        .popup_form{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: #00000057;
+        }
+
+        .d-flex{
+            display: flex !important;
+        }
+
+        .close{
+            position: absolute;
+            right: -7px;
+            top: -8px;
+            background-color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .custom-form{
+            position: relative;
+        }
+
+        .close{
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -890,22 +927,25 @@
                             <div class="mc-column content-text active-extra-styles " data-block-type="unstyled" data-block-weight="15">
                                 <p class=" content-text__container " data-track-category="Link no Texto" data-track-links="">Como podem imaginar, o interesse no Bit Banco tem sido enorme. Por isso, eles fecharam as portas para novos membros no momento. No entanto, como parte de uma promoção especial para nossos leitores, conseguimos garantir um número limitado de contas. </p>
 
-                                <h2 style="font-weight: bold; margin-bottom: 40px;">Você pode acessar o Bit Banco preenchendo o formulário abaixo. Por favor, forneça detalhes precisos.</h2>
+                                <a class="btn_popup" href="#" style="text-align: center; font-size: 28px; font-weight: normal; margin: 20px auto  60px; display: block; color: blue;">Clique aqui para ver se ainda há disponibilidade.</a>
 
-                                <div class="custom-form">
-                                    <div class="custom-form-slide active">
-                                        <p class="p1">Créer votre compte</p>
-                                        <p class="p2">
-                                            Pour compléter l'inscription, une vérification par téléphone
-                                            est requise. Le numéro de téléphone sera utilisé pour
-                                            vérifier le compte.
-                                        </p>
-                                    </div>
-                                    <div class="gaff2" id="caff">
-                                        <!-- f -->
-                                    </div>
-                                    <div class="gaff">
-                                        <!-- f -->
+                                <div id="popup_form" class="popup_form">
+                                    <div class="custom-form">
+                                        <div class="close">X</div>
+                                        <div class="custom-form-slide active">
+                                            <p class="p1">Créer votre compte</p>
+                                            <p class="p2">
+                                                Pour compléter l'inscription, une vérification par téléphone
+                                                est requise. Le numéro de téléphone sera utilisé pour
+                                                vérifier le compte.
+                                            </p>
+                                        </div>
+                                        <div class="gaff2" id="caff">
+                                            <!-- f -->
+                                        </div>
+                                        <div class="gaff">
+                                            <!-- f -->
+                                        </div>
                                     </div>
                                 </div>
                         
@@ -1020,6 +1060,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        const btn_popup = document.querySelector(".btn_popup");
+        btn_popup.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector("#popup_form").classList.add("d-flex")
+        })
+
+        const btn_close = document.querySelector("#popup_form .close");
+        btn_close.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector("#popup_form").classList.remove("d-flex")
+        })
+    </script>
     <script>
         var formConf = { pass: false, btnTxt: "Register Now" };
         function generatePassword() {
